@@ -27,8 +27,6 @@ def measure_algo(algorithm: Callable, benchmarks_path: Path, N: int = 100):
         Ds.append(D)
         Fs.append(F)
 
-        break
-
     avg_times = []
     total_perms = []
     total_costs = []
@@ -67,7 +65,7 @@ def print_results(
     answers_path: Path,
 ):
     print(f"\n\n{algorithm}")
-    print(f"{'Benchmark':<15}{'Average time(ms)':<20}{'Cost':<15}")
+    print(f"{'Benchmark':<15}{'Average time(ms)':<20}{'Distance':<15}")
     print("-" * 120)
     for benchmark, time_ms, perm, cost in zip(
         benchmarks, avg_times, total_perms, total_costs

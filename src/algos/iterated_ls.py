@@ -1,6 +1,6 @@
 import random
 from typing import List
-from .best_improvement_ls import first_improvement_local_search
+from .first_improvement_ls import first_improvement_local_search
 
 
 def swap(perm: List[int], n: int = 2):

@@ -15,7 +15,7 @@ def first_improvement_local_search(
     F: List[List[int]],
     D: List[List[int]],
     perm: List[int] = None,
-    reset_frequency: int = 5,
+    dnl_reset_frequency: int = 5,
 ):
     if perm is None:
         perm = list(range(len(F)))
@@ -31,7 +31,7 @@ def first_improvement_local_search(
         improved = False
         iteration += 1
 
-        if iteration % reset_frequency == 0:
+        if iteration % dnl_reset_frequency == 0:
             do_not_look = [False] * n
 
         for i in range(n):
