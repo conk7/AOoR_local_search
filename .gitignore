@@ -9,3 +9,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+benchmarks/opt
+src/_calc_cost.py
+report/answers/BestAnswers.tar.gz
+report/answers/BestAnswersAltFunc.tar.gz
+

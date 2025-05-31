@@ -1,14 +1,20 @@
+import os
 from pathlib import Path
 import time
 from typing import Callable, List
 from tqdm import tqdm
+from algos.best_improvement import calculate_cost
+
+BENCHMARKS_PATH = Path().resolve() / "benchmarks"
+ANSWERS_PATH = Path().resolve() / "report" / "answers"
+N = 1
 
 
 def measure_algo(algorithm: Callable, benchmarks_path: Path, N: int = 100):
     Ds = []
     Fs = []
-
-    for path in benchmarks_path.glob("*"):
+    benchmarks = [p for p in list(benchmarks_path.glob("*")) if p.is_file()]
+    for path in benchmarks:
         with open(path, "r") as f:
             n = int(f.readline().strip())
             D = []
@@ -49,11 +55,35 @@ def measure_algo(algorithm: Callable, benchmarks_path: Path, N: int = 100):
         avg_times.append(avg_time)
 
     return (
-        [path.stem for path in benchmarks_path.glob("*")],
+        [p.stem for p in list(benchmarks_path.glob("*")) if p.is_file()],
         avg_times,
         total_perms,
         total_costs,
     )
+
+
+def get_cost_from_file(benchmark: Path, answer: Path):
+    with open(benchmark, "r") as f:
+        n = int(f.readline().strip())
+        D = []
+        F = []
+
+        for _ in range(n):
+            line = f.readline().strip()
+            D.append(list(map(int, line.split())))
+
+        _ = f.readline()
+
+        for _ in range(n):
+            line = f.readline().strip()
+            F.append(list(map(int, line.split())))
+
+    with open(answer, "r") as f:
+        line = f.readline().strip()
+        perm = list(map(int, line.split()))
+        perm = [x - 1 for x in perm]
+
+    return calculate_cost(F, D, perm)
 
 
 def print_results(
@@ -73,5 +103,8 @@ def print_results(
         print(f"{benchmark:<15}{time_ms:<20.4f}{cost:<15}")
         file_path = answers_path / algorithm / (benchmark.__str__() + ".sol")
         file_path.touch()
-        with open(file_path, "w+") as file:
-            file.write(" ".join(map(str, perm)))
+        written_cost = get_cost_from_file(BENCHMARKS_PATH / benchmark, file_path)
+        if cost < written_cost:
+            with open(file_path, "w+") as file:
+                perm = [x + 1 for x in perm]
+                file.write(" ".join(map(str, perm)))

@@ -1,15 +1,12 @@
-from pathlib import Path
-from algos import first_improvement_local_search, iterated_local_search
-from utils import measure_algo, print_results
-
-
-BENCHMARKS_PATH = Path().resolve() / "benchmarks"
-ANSWERS_PATH = Path().resolve() / "report" / "answers"
-N = 1
+from algos import (
+    iterated_local_search,
+    best_improvement_local_search,
+)
+from utils import measure_algo, print_results, BENCHMARKS_PATH, ANSWERS_PATH, N
 
 
 def main():
-    for algo in [first_improvement_local_search, iterated_local_search]:
+    for algo in [iterated_local_search]:
         benchmarks, avg_times, total_perms, total_cost = measure_algo(
             algo, BENCHMARKS_PATH, N
         )
