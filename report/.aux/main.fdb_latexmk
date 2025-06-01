@@ -1,12 +1,12 @@
 # Fdb version 4
-["xdvipdfmx"] 1748711784.2738 ".aux/main.xdv" "main.pdf" "main" 1748711784.38656 0
-  ".aux/main.xdv" 1748711784.25028 10132 55f7e6c010c218be251abc1fa179d96b "xelatex"
+["xdvipdfmx"] 1748766460.20323 ".aux/main.xdv" "main.pdf" "main" 1748766460.3167 0
+  ".aux/main.xdv" 1748766460.18106 9020 205a3bf3dc3df43ac72ed179366678e6 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1748711783.92417 "/home/conk/Files/Programming/algos/4. evol_local/report/main.tex" ".aux/main.xdv" "main" 1748711784.38583 0
-  ".aux/main.aux" 1748711784.25028 627 549f0f8eb53b5f7b492105d78791e88c "xelatex"
-  "/home/conk/Files/Programming/algos/4. evol_local/report/main.tex" 1748711783.7239 3950 0f10044d0e10fa0ebeb26e864d44368a ""
+["xelatex"] 1748766459.86337 "/home/conk/Files/Programming/algos/4. evol_local/report/main.tex" ".aux/main.xdv" "main" 1748766460.31579 0
+  ".aux/main.aux" 1748766460.17961 627 549f0f8eb53b5f7b492105d78791e88c "xelatex"
+  "/home/conk/Files/Programming/algos/4. evol_local/report/main.tex" 1748766459.71248 3746 81bca6a9d81684d7772d5f145cbffde5 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1742685315 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1742685315 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1742685315 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -66,7 +66,7 @@
   "/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty" 1742685315 5689 1bfa68243e89a54479e7d0580773c57e ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1742685315 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1744215568 4491642 33fcbb1be1135315a1ccb1d7c12f669b ""
-  "main.tex" 1748711783.7239 3950 0f10044d0e10fa0ebeb26e864d44368a ""
+  "main.tex" 1748766459.71248 3746 81bca6a9d81684d7772d5f145cbffde5 ""
   (generated)
   ".aux/main.aux"
   ".aux/main.log"

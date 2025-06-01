@@ -23,7 +23,7 @@ def iterated_local_search(F: List[List[int]], D: List[List[int]]):
     best_cost = current_cost
 
     for _ in range(NUM_ITERATIONS):
-        new_perm = perturbation(current_perm)
+        new_perm = perturbation(current_perm, n=len(current_perm) // 6)
         new_perm, new_cost = best_improvement_local_search(F, D, perm=new_perm)
         if new_cost < current_cost:
             current_perm, current_cost = new_perm, new_cost
